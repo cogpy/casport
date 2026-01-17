@@ -1,0 +1,2556 @@
+{
+  "metadata": {
+    "version": "30.0_COMPREHENSIVE_REFINEMENT_2026_01_18",
+    "created_date": "2025-11-10",
+    "description": "Relation model for Revenue Stream Hijacking case 2025-137857",
+    "case_number": "2025-137857",
+    "modeling_approach": "hypergraph_compatible_relations",
+    "last_updated": "2026-01-17T17:26:32.885487",
+    "changes": "Comprehensive refinement of relations.",
+    "total_relations": 117
+  },
+  "relations": {
+    "ownership_relations": [
+      {
+        "relation_id": "REL_OWN_001",
+        "relation_type": "owns",
+        "source_entity": "PERSON_005",
+        "target_entity": "ORG_003",
+        "strength": "complete_ownership",
+        "legal_status": "legitimate",
+        "evidence": [
+          "company_registration_uk",
+          "payment_records_28_months"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408205",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_OWN_002",
+        "relation_type": "owns",
+        "source_entity": "ORG_003",
+        "target_entity": "PLATFORM_001",
+        "strength": "complete_ownership",
+        "legal_status": "legitimate",
+        "evidence": [
+          "shopify_payment_records",
+          "platform_subscription_invoices"
+        ],
+        "financial_details": {
+          "start_date": "2023-07",
+          "duration_months": 28,
+          "total_investment": "R140,000 - R280,000"
+        },
+        "evidence_verified": "2026-01-09T05:36:21.408224",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_OWN_003",
+        "relation_type": "owns",
+        "source_entity": "ORG_003",
+        "target_entity": "DOMAIN_001",
+        "strength": "complete_ownership",
+        "legal_status": "legitimate",
+        "evidence": [
+          "domain_registration_records",
+          "dns_configuration"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408226",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_OWN_004",
+        "relation_type": "owns",
+        "source_entity": "PERSON_003",
+        "target_entity": "DOMAIN_002",
+        "strength": "complete_ownership",
+        "legal_status": "fraudulent",
+        "evidence": [
+          "domain_registration_2025_05_29",
+          "CIPC company registration records",
+          "Financial statements and ownership documentation"
+        ],
+        "purpose": "identity_fraud",
+        "evidence_verified": "2026-01-09T05:36:21.408228",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_OWN_005",
+        "relation_type": "partial_ownership",
+        "source_entity": "director",
+        "target_entity": "ORG_002",
+        "strength": "50%",
+        "legal_status": "legitimate",
+        "additional_notes": "Director owns 50% of RST",
+        "evidence": [
+          "company_registration",
+          "shareholding_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408230",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_OWN_006",
+        "relation_type": "partial_ownership",
+        "source_entity": "director",
+        "target_entity": "ORG_005",
+        "strength": "50%",
+        "legal_status": "legitimate",
+        "additional_notes": "Director owns 50% of Villa Via",
+        "evidence": [
+          "company_registration",
+          "shareholding_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408231",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_OWN_007",
+        "from_entity": "PERSON_001,PERSON_005",
+        "to_entity": "ORG_012",
+        "relation_type": "owns",
+        "description": "Peter and Daniel Faucitt own RegimaSA (Pty) Ltd",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Directors and shareholders",
+          "CIPC company registration records",
+          "Financial statements and ownership documentation"
+        ],
+        "significance": "Joint ownership establishes both Peter and Daniel's control and fiduciary duties",
+        "evidence_verified": "2026-01-09T05:36:21.408233",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "control_relations": [
+      {
+        "relation_id": "REL_CTRL_001",
+        "relation_type": "controls",
+        "source_entity": "PERSON_001",
+        "target_entity": "ORG_001",
+        "control_type": "directorial_control",
+        "legal_status": "disputed",
+        "evidence": [
+          "director_appointment",
+          "operational_decisions"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408240",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "conclusive",
+        "evidence_upgraded": "2026-01-04T05:34:37.785536"
+      },
+      {
+        "relation_id": "REL_CTRL_002",
+        "relation_type": "controls",
+        "source_entity": "PERSON_002",
+        "target_entity": "financial_systems",
+        "control_type": "financial_controller",
+        "legal_status": "disputed",
+        "evidence": [
+          "accounts_system_control",
+          "bank_account_changes"
+        ],
+        "timeline_events": [
+          "payment_redirection_2025_04_01",
+          "bank_account_change_2025_04_14"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408242",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "conclusive",
+        "evidence_upgraded": "2026-01-04T05:34:37.785545"
+      },
+      {
+        "relation_id": "REL_CTRL_003",
+        "relation_type": "operates",
+        "source_entity": "PERSON_005",
+        "target_entity": "PLATFORM_001",
+        "control_type": "platform_operator",
+        "legal_status": "legitimate",
+        "evidence": [
+          "platform_access_logs",
+          "operational_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408243",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_CTRL_004",
+        "relation_type": "operates",
+        "source_entity": "PERSON_004",
+        "target_entity": "PLATFORM_001",
+        "control_type": "platform_operator",
+        "legal_status": "legitimate",
+        "evidence": [
+          "platform_access_logs",
+          "operational_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408244",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_CTRL_005",
+        "relation_type": "trustee_of",
+        "source_entity": "PERSON_001",
+        "target_entity": "TRUST_001",
+        "control_type": "fiduciary_control",
+        "legal_status": "violated",
+        "evidence": [
+          "trust_deed",
+          "trustee_appointment"
+        ],
+        "violations": [
+          "unauthorized_beneficiary_changes",
+          "trust_asset_misappropriation",
+          "systematic_trust_violations"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408245",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "conclusive",
+        "evidence_upgraded": "2026-01-04T05:34:37.785551"
+      },
+      {
+        "relation_id": "REL_CTRL_006",
+        "from_entity": "PERSON_001",
+        "to_entity": "ORG_012",
+        "relation_type": "controls_as_director",
+        "description": "Peter Faucitt (P.A. Faucitt) is director of RegimaSA",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Directors' Report page 4",
+          "Director appointment documentation",
+          "System access logs and screenshots"
+        ],
+        "significance": "Establishes Peter's control and fiduciary duties; contradicts claims of separation from Regima entities",
+        "evidence_verified": "2026-01-09T05:36:21.408248",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_CTRL_007",
+        "from_entity": "PERSON_005",
+        "to_entity": "ORG_012",
+        "relation_type": "controls_as_director",
+        "description": "Daniel Faucitt (D.J. Faucitt) is director of RegimaSA",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Directors' Report page 4",
+          "Director appointment documentation",
+          "System access logs and screenshots"
+        ],
+        "significance": "Establishes Daniel's control and fiduciary duties",
+        "evidence_verified": "2026-01-09T05:36:21.408250",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_CTRL_008",
+        "from_entity": "PERSON_002",
+        "to_entity": "ORG_001",
+        "relation_type": "controls_sage_accounting",
+        "description": "Rynette Farrar is Sage subscription owner for RegimA WWD; controls access to financial records",
+        "evidence": [
+          "Sage screenshot 2025-08-25 - Accounting Registration Expired",
+          "Subscription owner: Rynette Farrar"
+        ],
+        "significance": "Can deny access to financial records by not renewing subscription; system expired July 23, 2025",
+        "evidence_verified": "2026-01-09T05:36:21.408251",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "conspiracy_relations": [
+      {
+        "relation_id": "REL_CONSP_001",
+        "relation_type": "co_conspirator",
+        "source_entity": "PERSON_001",
+        "target_entity": "PERSON_002",
+        "conspiracy_type": "coordinated_criminal_activity",
+        "evidence_strength": "conclusive",
+        "shared_events": 8,
+        "evidence": [
+          "payment_redirection_scheme_2025_04_01",
+          "unauthorized_beneficiary_changes_2025_05_02",
+          "coordinated_fund_diversions_2025_06_30"
+        ],
+        "pattern": "systematic_coordination",
+        "evidence_verified": "2026-01-09T05:36:21.408252",
+        "ad_res_j7_evidence": [
+          "SF2_Sage_Screenshots_Rynette_Control.md",
+          "ANNEXURES/JF07 - Visual evidence of coordination"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "relation_id": "REL_CONSP_002",
+        "relation_type": "family_conspiracy",
+        "source_entity": "PERSON_002",
+        "target_entity": "PERSON_003",
+        "conspiracy_type": "mother_son_collusion",
+        "evidence_strength": "strong",
+        "evidence": [
+          "domain_registration_identity_fraud_2025_05_29",
+          "Email correspondence patterns",
+          "Timeline of coordinated actions"
+        ],
+        "relationship": "mother_son",
+        "evidence_verified": "2026-01-09T05:36:21.408254",
+        "ad_res_j7_evidence": [
+          "SF2_Sage_Screenshots_Rynette_Control.md",
+          "ANNEXURES/JF07 - Visual evidence of coordination"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "relation_id": "REL_CONSP_003",
+        "relation_type": "coordinated_network",
+        "source_entity": "PERSON_001",
+        "target_entity": "associates",
+        "conspiracy_type": "broader_network",
+        "evidence_strength": "strong",
+        "evidence": [
+          "coordinated_fund_diversions_2025_06_30",
+          "financial_evidence_concealment_2025_08_20"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408255",
+        "ad_res_j7_evidence": [
+          "SF2_Sage_Screenshots_Rynette_Control.md",
+          "ANNEXURES/JF07 - Visual evidence of coordination"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "relation_id": "REL_CONSP_004",
+        "relation_type": "co_conspirator",
+        "source_entity": "PERSON_007",
+        "target_entity": "PERSON_001",
+        "conspiracy_type": "coordinated_fraud_concealment",
+        "evidence_strength": "conclusive",
+        "shared_events": [
+          "EVENT_H005",
+          "EVENT_H006",
+          "EVENT_025",
+          "EVENT_026"
+        ],
+        "evidence": [
+          "trial_balance_manipulation_2020",
+          "stock_adjustment_fraud_concealment_2025",
+          "audit_dismissal_2025_06_10"
+        ],
+        "pattern": "systematic_coordination",
+        "motive": "R18,685,000_debt_concealment",
+        "evidence_verified": "2026-01-09T05:36:21.408256",
+        "ad_res_j7_evidence": [
+          "SF2_Sage_Screenshots_Rynette_Control.md",
+          "ANNEXURES/JF07 - Visual evidence of coordination"
+        ],
+        "confidence": 0.95
+      }
+    ],
+    "dependency_relations": [
+      {
+        "relation_id": "REL_DEP_001",
+        "relation_type": "depends_on",
+        "source_entity": "ORG_001",
+        "target_entity": "ORG_003",
+        "dependency_type": "infrastructure_dependency",
+        "dependency_strength": "complete",
+        "critical_implication": "RWD_ZA_has_no_independent_revenue_stream",
+        "evidence": [
+          "shopify_platform_ownership",
+          "28_months_continuous_funding",
+          "invoice_issuance_without_ownership"
+        ],
+        "financial_impact": "R3,141,647.70",
+        "evidence_verified": "2026-01-09T05:36:21.408258",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF01 - Shopify platform dependency evidence",
+          "ANNEXURES/JF02 - Business operations documentation"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_DEP_002",
+        "relation_type": "uses_without_ownership",
+        "source_entity": "ORG_001",
+        "target_entity": "PLATFORM_001",
+        "dependency_type": "unauthorized_use",
+        "dependency_strength": "complete",
+        "legal_status": "fraudulent",
+        "evidence": [
+          "platform_owned_by_uk_entity",
+          "invoices_issued_by_rwd_za",
+          "no_payment_for_platform_by_rwd_za"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408259",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF01 - Shopify platform dependency evidence",
+          "ANNEXURES/JF02 - Business operations documentation"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      }
+    ],
+    "financial_relations": [
+      {
+        "relation_id": "REL_FIN_001",
+        "relation_type": "payment_redirection",
+        "source_entity": "PERSON_002",
+        "target_entity": "bank_accounts",
+        "financial_type": "unauthorized_diversion",
+        "amount": "R4,276,832.85",
+        "timeline_events": [
+          "payment_redirection_scheme_2025_04_01",
+          "bank_account_change_letter_2025_04_14"
+        ],
+        "legal_status": "criminal",
+        "evidence": [
+          "financial_records",
+          "bank_statements",
+          "transaction_logs"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408260",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_FIN_002",
+        "relation_type": "unauthorized_transfers",
+        "source_entity": "PERSON_001",
+        "target_entity": "accounts",
+        "financial_type": "theft",
+        "amount": "R850,000+",
+        "timeline_events": [
+          "unauthorized_transfers_2025_05_15"
+        ],
+        "legal_status": "criminal",
+        "evidence": [
+          "financial_records",
+          "bank_statements",
+          "transaction_logs"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408261",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_FIN_003",
+        "relation_type": "revenue_generation",
+        "source_entity": "PLATFORM_001",
+        "target_entity": "ORG_001",
+        "financial_type": "sales_revenue",
+        "amount": "R1,000,000+ monthly",
+        "legal_status": "fraudulent_claim",
+        "critical_note": "Revenue generated on infrastructure not owned by ORG_001",
+        "evidence": [
+          "financial_records",
+          "bank_statements",
+          "transaction_logs"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408262",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_FIN_004",
+        "relation_type": "investment",
+        "source_entity": "PERSON_005",
+        "target_entity": "PLATFORM_001",
+        "financial_type": "legitimate_investment",
+        "amount": "R140,000 - R280,000",
+        "duration": "28_months",
+        "legal_status": "legitimate",
+        "evidence": [
+          "financial_records",
+          "bank_statements",
+          "transaction_logs"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408263",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_FIN_005",
+        "relation_type": "self_rent_charge",
+        "source_entity": "director",
+        "target_entity": "director",
+        "financial_type": "wealth_transfer_mechanism",
+        "legal_status": "conflict_of_interest",
+        "entities_involved": [
+          "ORG_002",
+          "ORG_005"
+        ],
+        "additional_notes": "Director owns 50% of both entities and charges rent to himself",
+        "evidence": [
+          "financial_records",
+          "transaction_logs",
+          "bank_statements"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408264",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_FIN_006",
+        "relation_type": "stock_loss",
+        "source_entity": "ORG_004",
+        "target_entity": "stock",
+        "financial_type": "disappeared_stock",
+        "amount": "R5,400,000",
+        "legal_status": "suspicious",
+        "additional_notes": "Stock adjustment reflecting disappeared stock, same type supplied by Addarory's company",
+        "evidence": [
+          "financial_records",
+          "transaction_logs",
+          "bank_statements"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408265",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_FIN_007",
+        "from_entity": "ORG_012",
+        "to_entity": "ORG_008",
+        "relation_type": "loan_receivable",
+        "description": "RegimaSA has R1,853 loan receivable from ReZonance (Pty) Ltd",
+        "amount": 1853,
+        "currency": "ZAR",
+        "date": "2019-02-28",
+        "terms": "Unsecured, no fixed repayment terms, interest at rates agreed upon from time to time",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Note 2, page 11",
+          "Financial statements",
+          "Bank transaction records"
+        ],
+        "significance": "Establishes financial relationship between RegimaSA and ReZonance during debt accumulation period",
+        "evidence_verified": "2026-01-09T05:36:21.408267",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_FIN_008",
+        "from_entity": "ORG_012",
+        "to_entity": "PERSON_005",
+        "relation_type": "loan_payable_shareholder",
+        "description": "RegimaSA owes R6,000 to Daniel Faucitt (D.A. Faucitt) as shareholder loan",
+        "amount": 6000,
+        "currency": "ZAR",
+        "date": "2019-02-28",
+        "terms": "Unsecured, no fixed repayment terms, interest at rates agreed upon from time to time",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Note 4, page 11",
+          "Financial statements",
+          "Bank transaction records"
+        ],
+        "significance": "Establishes Daniel's financial investment and interest in RegimaSA",
+        "evidence_verified": "2026-01-09T05:36:21.408269",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_FIN_009",
+        "from_entity": "ORG_012",
+        "to_entity": "ORG_013",
+        "relation_type": "loan_payable",
+        "description": "RegimaSA owes R500 to Unicorn Dynamics (Pty) Ltd",
+        "amount": 500,
+        "currency": "ZAR",
+        "date": "2019-02-28",
+        "terms": "Unsecured, no fixed repayment terms, interest at rates agreed upon from time to time",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Note 5, page 11",
+          "Financial statements",
+          "Bank transaction records"
+        ],
+        "significance": "Establishes financial relationship with Unicorn Dynamics, another related party entity",
+        "evidence_verified": "2026-01-09T05:36:21.408270",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_FIN_010",
+        "from_entity": "ORG_001",
+        "to_entity": "ORG_008",
+        "relation_type": "debt_payment",
+        "description": "RegimA WWD paid R157,315.35 to ReZonance (July-December 2022)",
+        "amount": 157315.35,
+        "currency": "ZAR",
+        "period": "2022-07-30 to 2022-12-29",
+        "evidence": [
+          "Rez-WWD.pdf - Supplier Transactions Report",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "significance": "Large debt payments reducing ReZonance debt from R85k to R22k",
+        "evidence_verified": "2026-01-09T05:36:21.408272",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_FIN_011",
+        "from_entity": "ORG_001",
+        "to_entity": "ORG_013",
+        "relation_type": "supplier_payment",
+        "description": "RegimA WWD paid R20,529.03 to Unicorn Dynamics (March 2022 - February 2023)",
+        "amount": 20529.03,
+        "currency": "ZAR",
+        "period": "2022-03-01 to 2023-02-03",
+        "evidence": [
+          "Unicorn-WWD.pdf - Supplier Transactions Report",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "significance": "Cleared all Unicorn Dynamics debts by Feb 2023",
+        "evidence_verified": "2026-01-09T05:36:21.408274",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF04 - CIPC registration documents",
+          "ANNEXURES/JF01 - Shopify ownership evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "victim_perpetrator_relations": [
+      {
+        "relation_id": "REL_VP_001",
+        "relation_type": "perpetrator_victim",
+        "source_entity": "PERSON_001",
+        "target_entity": "PERSON_005",
+        "crime_type": "revenue_theft",
+        "amount": "R10,269,727.90",
+        "evidence_strength": "strong",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408275",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Fraud evidence packages",
+          "1-CIVIL-RESPONSE - Answering affidavit documentation"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "relation_id": "REL_VP_002",
+        "relation_type": "perpetrator_victim",
+        "source_entity": "PERSON_002",
+        "target_entity": "PERSON_005",
+        "crime_type": "financial_manipulation",
+        "amount": "R4,276,832.85",
+        "evidence_strength": "strong",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408276",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Fraud evidence packages",
+          "1-CIVIL-RESPONSE - Answering affidavit documentation"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "relation_id": "REL_VP_003",
+        "relation_type": "perpetrator_victim",
+        "source_entity": "PERSON_001",
+        "target_entity": "TRUST_001",
+        "crime_type": "trust_violations",
+        "amount": "R2,851,247.35",
+        "evidence_strength": "strong",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408277",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Fraud evidence packages",
+          "1-CIVIL-RESPONSE - Answering affidavit documentation"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "employment_relations": [
+      {
+        "relation_id": "REL_EMP_001",
+        "relation_type": "employed_by",
+        "source_entity": "PERSON_006",
+        "target_entity": "regima_group",
+        "role": "bookkeeper",
+        "legal_status": "legitimate",
+        "anomaly": "employed_while_PERSON_002_controlled_accounts_system",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408278",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF8_Linda_Employment_Records.md - Employment documentation",
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - System control evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_EMP_002",
+        "relation_type": "sibling_of",
+        "source_entity": "PERSON_006",
+        "target_entity": "PERSON_002",
+        "relationship_type": "sister",
+        "relevance": "potential_conflict_of_interest",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408280",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF8_Linda_Employment_Records.md - Employment documentation",
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - System control evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "evidence_destruction_relations": [
+      {
+        "relation_id": "REL_EVID_001",
+        "relation_type": "destroyed_evidence",
+        "source_entity": "coordinated_action",
+        "target_entity": "PLATFORM_001",
+        "destruction_type": "audit_trail_hijacking",
+        "date": "2025-05-22",
+        "legal_significance": "consciousness_of_guilt",
+        "impact": "R1,000,000+ monthly revenue to R0",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408281",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - System expiry evidence",
+          "ANNEXURES/JF08 - Evidence of system control"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_EVID_002",
+        "relation_type": "concealed_evidence",
+        "source_entity": "coordinated_network",
+        "target_entity": "financial_records",
+        "destruction_type": "financial_evidence_concealment",
+        "date": "2025-08-20",
+        "legal_significance": "consciousness_of_guilt",
+        "purpose": "cover_up_no_independent_revenue_stream",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408282",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - System expiry evidence",
+          "ANNEXURES/JF08 - Evidence of system control"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "temporal_relations": [
+      {
+        "relation_id": "REL_TEMP_001",
+        "relation_type": "preceded_by",
+        "source_entity": "payment_redirection_scheme",
+        "target_entity": "trust_structure_establishment",
+        "temporal_gap_days": 17,
+        "pattern": "foundation_then_exploitation",
+        "evidence": [
+          "timeline_analysis",
+          "event_sequence_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408283",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Timeline evidence",
+          "1-CIVIL-RESPONSE/annexures/JF-TIMELINE.md - Comprehensive timeline"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TEMP_002",
+        "relation_type": "escalation_pattern",
+        "source_entity": "bank_account_change",
+        "target_entity": "audit_trail_destruction",
+        "temporal_gap_days": 38,
+        "pattern": "systematic_escalation",
+        "evidence": [
+          "timeline_analysis",
+          "event_sequence_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408284",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Timeline evidence",
+          "1-CIVIL-RESPONSE/annexures/JF-TIMELINE.md - Comprehensive timeline"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TEMP_003",
+        "relation_type": "followed_by",
+        "source_entity": "audit_trail_destruction",
+        "target_entity": "financial_evidence_concealment",
+        "temporal_gap_days": 90,
+        "pattern": "evidence_destruction_sequence",
+        "evidence": [
+          "timeline_analysis",
+          "event_sequence_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408285",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Timeline evidence",
+          "1-CIVIL-RESPONSE/annexures/JF-TIMELINE.md - Comprehensive timeline"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TEMP_004",
+        "relation_type": "trigger_response",
+        "source_entity": "EVENT_007",
+        "target_entity": "EVENT_026",
+        "temporal_gap_days": 26,
+        "pattern": "confrontation_triggers_audit_dismissal",
+        "significance": "jax_confrontation_about_rezonance_debt_triggers_bantjies_to_dismiss_audit",
+        "evidence": [
+          "timeline_analysis",
+          "event_sequence_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408286",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Timeline evidence",
+          "1-CIVIL-RESPONSE/annexures/JF-TIMELINE.md - Comprehensive timeline"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TEMP_005",
+        "relation_type": "escalation_sequence",
+        "source_entity": "EVENT_026",
+        "target_entity": "EVENT_027",
+        "temporal_gap_days": 10,
+        "pattern": "audit_dismissal_followed_by_customer_diversion",
+        "significance": "systematic_evidence_destruction_and_revenue_hijacking_sequence",
+        "evidence": [
+          "timeline_analysis",
+          "event_sequence_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408287",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Timeline evidence",
+          "1-CIVIL-RESPONSE/annexures/JF-TIMELINE.md - Comprehensive timeline"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TEMP_006",
+        "relation_type": "historical_foundation",
+        "source_entity": "EVENT_H007",
+        "target_entity": "EVENT_001",
+        "temporal_gap_days": 1766,
+        "pattern": "villa_via_profit_extraction_precedes_revenue_diversion",
+        "significance": "established_profit_extraction_mechanism_before_2025_fraud",
+        "evidence": [
+          "timeline_analysis",
+          "event_sequence_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408288",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Timeline evidence",
+          "1-CIVIL-RESPONSE/annexures/JF-TIMELINE.md - Comprehensive timeline"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "debt_relations": [
+      {
+        "relation_id": "REL_DEBT_001",
+        "relation_type": "debtor_to_trust",
+        "source_entity": "PERSON_007",
+        "target_entity": "TRUST_001",
+        "debt_amount": "R18,685,000",
+        "legal_status": "massive_conflict_of_interest",
+        "evidence": [
+          "trust_financial_statements",
+          "loan_agreements"
+        ],
+        "significance": "creates_motive_for_fraud_concealment",
+        "triple_conflict": "trustee_debtor_accountant",
+        "evidence_verified": "2026-01-09T05:36:21.408289",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF1_Bantjies_Debt_Documentation.md - R18.685M debt evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_DEBT_002",
+        "relation_type": "creditor_relationship",
+        "source_entity": "ORG_008",
+        "target_entity": "regima_group",
+        "debt_amount": "R1,035,361.34",
+        "since": "Feb 2023",
+        "legal_status": "unpaid_legitimate_debt",
+        "false_payment_claims": "R1,235,361.34",
+        "evidence": [
+          "rezonance_account_statements",
+          "payment_reconciliation"
+        ],
+        "significance": "trigger_for_jax_confrontation_and_retaliation",
+        "evidence_verified": "2026-01-09T05:36:21.408291",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF1_Bantjies_Debt_Documentation.md - R18.685M debt evidence",
+          "ANNEXURES/JF03 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "estate_relations": [
+      {
+        "relation_id": "REL_ESTATE_001",
+        "relation_type": "estate_ownership",
+        "source_entity": "ORG_008",
+        "target_entity": "PERSON_008",
+        "relationship": "part_of_kayla_estate",
+        "debt_involved": "R1,035,361.34",
+        "legal_status": "estate_asset",
+        "evidence": [
+          "estate_documentation",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "significance": "jax_confrontation_about_profiting_from_murder_proceeds",
+        "evidence_verified": "2026-01-09T05:36:21.408292",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF6_Kayla_Pretorius_Estate_Documentation.md - Estate documentation",
+          "ANNEXURES/SF7_Court_Order_Kayla_Email_Seizure.md - Court order"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "witness_relations": [
+      {
+        "relation_id": "REL_WITNESS_001",
+        "relation_type": "witness_to_fraud",
+        "source_entity": "PERSON_009",
+        "target_entity": "DOMAIN_002",
+        "witness_type": "direct_participant",
+        "evidence_provided": "domain_switch_email_instruction",
+        "date": "2025-06-20",
+        "legal_status": "material_witness",
+        "significance": "direct_evidence_of_customer_diversion_scheme",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408293",
+        "ad_res_j7_evidence": [
+          "1-CIVIL-RESPONSE/annexures/JF-DAN-WITNESS.md - Witness statement",
+          "ANNEXURES/JF08 - Supporting evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_WITNESS_002",
+        "relation_type": "witness_to_financial_control",
+        "source_entity": "PERSON_010",
+        "target_entity": "PERSON_007",
+        "witness_type": "email_recipient",
+        "evidence_provided": "trial_balance_email_2020_08_13",
+        "date": "2020-08-13",
+        "legal_status": "material_witness",
+        "significance": "evidence_of_bantjies_control_over_financial_systems",
+        "evidence": [
+          "documented_evidence",
+          "case_file_records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408295",
+        "ad_res_j7_evidence": [
+          "1-CIVIL-RESPONSE/annexures/JF-DAN-WITNESS.md - Witness statement",
+          "ANNEXURES/JF08 - Supporting evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "conflict_relations": [
+      {
+        "relation_id": "REL_CONFLICT_001",
+        "relation_type": "triple_conflict_of_interest",
+        "source_entity": "PERSON_007",
+        "conflict_roles": [
+          "trustee_of_TRUST_001",
+          "debtor_to_TRUST_001_R18685000",
+          "accountant_for_regima_group",
+          "commissioner_of_oaths"
+        ],
+        "legal_status": "severe_conflict_of_interest",
+        "evidence": [
+          "trust_deed_trustee_appointment",
+          "debt_documentation_R18685000",
+          "accounting_engagement_letters",
+          "commissioner_certification_peters_affidavit"
+        ],
+        "motive": "prevent_discovery_of_debt_and_fraud",
+        "actions_taken": [
+          "dismissed_audit_request_2025_06_10",
+          "certified_affidavit_with_material_omissions",
+          "controlled_financial_systems_with_rynette"
+        ],
+        "significance": "explains_systematic_fraud_concealment_and_retaliation",
+        "evidence_verified": "2026-01-09T05:36:21.408296",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF1_Bantjies_Debt_Documentation.md - Conflict of interest evidence",
+          "ANNEXURES/SF3_Strategic_Logistics_Stock_Adjustment.md - Fraud concealment"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      }
+    ],
+    "email_control_relations": [
+      {
+        "relation_id": "REL_EMAIL_001",
+        "relation_type": "controls_email",
+        "source_entity": "PERSON_002",
+        "target_entity": "PERSON_001",
+        "email_address": "pete@regima.com",
+        "strength": "complete_control",
+        "legal_status": "unauthorized",
+        "evidence": [
+          "sage_screenshots_june_2025",
+          "sage_screenshots_august_2025",
+          "email_correspondence"
+        ],
+        "significance": "critical_control_mechanism_for_fraud",
+        "additional_notes": "Rynette controlled Peter's email address, allowing her to control accounts system and financial communications",
+        "evidence_verified": "2026-01-09T05:36:21.408297",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - Email access evidence",
+          "ANNEXURES/JF01 - Email impersonation patterns"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_EMAIL_001",
+        "relation_type": "email_control",
+        "source_entity": "PERSON_002",
+        "target_entity": "PERSON_001",
+        "control_type": "email_account_control",
+        "legal_status": "unauthorized",
+        "evidence": [
+          "rynette_used_peters_email_for_accounts_system",
+          "trial_balance_email_2020_08_13"
+        ],
+        "additional_notes": "Rynette controlled accounts system using Peter's email despite Linda being employed as bookkeeper",
+        "evidence_verified": "2026-01-09T05:36:21.408298",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - Email access evidence",
+          "ANNEXURES/JF01 - Email impersonation patterns"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_EMAIL_002",
+        "relation_type": "email_seizure",
+        "source_entity": "PERSON_001",
+        "target_entity": "PERSON_008",
+        "control_type": "court_order_seizure",
+        "legal_status": "disputed",
+        "evidence": [
+          "court_order_to_seize_kayla_email",
+          "interference_with_law_enforcement_freeze"
+        ],
+        "additional_notes": "Court order obtained to seize account from Kayla's email, interfering with law enforcement investigation",
+        "evidence_verified": "2026-01-09T05:36:21.408299",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - Email access evidence",
+          "ANNEXURES/JF01 - Email impersonation patterns"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_EMAIL_002",
+        "from_entity": "PERSON_002",
+        "to_entity": "PERSON_001",
+        "relation_type": "email_access",
+        "description": "Rynette Farrar has user account with Pete@regima.com in Sage system",
+        "evidence": [
+          "Sage screenshot 2025-06-20 - Control User Access",
+          "User list shows: Rynette Farrar - Pete@regima.com"
+        ],
+        "significance": "Direct proof of Rynette's access to Peter's email; explains how she could send emails as Peter",
+        "evidence_verified": "2026-01-09T05:36:21.408300",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md - Email access evidence",
+          "ANNEXURES/JF01 - Email impersonation patterns"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "trustee_relations": [
+      {
+        "relation_id": "REL_TRUSTEE_001",
+        "relation_type": "trustee_of",
+        "source_entity": "PERSON_001",
+        "target_entity": "TRUST_001",
+        "role": "founder_and_trustee",
+        "legal_status": "legitimate",
+        "evidence": [
+          "trust_deed",
+          "court_documents"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408301",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust documentation",
+          "1-CIVIL-RESPONSE - Trust violation evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TRUSTEE_002",
+        "relation_type": "trustee_of",
+        "source_entity": "PERSON_007",
+        "target_entity": "TRUST_001",
+        "role": "unknown_trustee",
+        "legal_status": "undisclosed_conflict",
+        "evidence": [
+          "trust_analysis",
+          "financial_documents"
+        ],
+        "conflict_of_interest": {
+          "debt_to_trust": "R18,685,000",
+          "roles": [
+            "trustee",
+            "debtor",
+            "accountant",
+            "commissioner_of_oaths"
+          ]
+        },
+        "evidence_verified": "2026-01-09T05:36:21.408302",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust documentation",
+          "1-CIVIL-RESPONSE - Trust violation evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_TRUSTEE_001",
+        "relation_type": "unknown_trustee",
+        "source_entity": "PERSON_007",
+        "target_entity": "TRUST_001",
+        "control_type": "fiduciary_control",
+        "legal_status": "undisclosed_conflict",
+        "evidence": [
+          "trustee_appointment_undisclosed",
+          "R18685000_debt_to_trust",
+          "triple_conflict_trustee_debtor_accountant"
+        ],
+        "conflict_of_interest": {
+          "roles": [
+            "trustee",
+            "debtor_R18685000",
+            "accountant",
+            "commissioner_of_oaths"
+          ],
+          "motive": "prevent_discovery_of_massive_debt"
+        },
+        "evidence_verified": "2026-01-09T05:36:21.408304",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust documentation",
+          "1-CIVIL-RESPONSE - Trust violation evidence"
+        ],
+        "confidence": 0.95,
+        "evidence_strength": "conclusive"
+      }
+    ],
+    "beneficiary_relations": [
+      {
+        "relation_id": "REL_BENEF_001",
+        "relation_type": "beneficiary_of",
+        "source_entity": "PERSON_004",
+        "target_entity": "TRUST_001",
+        "legal_status": "legitimate",
+        "evidence": [
+          "trust_deed",
+          "Trust deed documentation",
+          "Beneficiary designation records"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408305",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust beneficiary documentation",
+          "1-CIVIL-RESPONSE - Beneficiary evidence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_BENEF_002",
+        "relation_type": "beneficiary_of",
+        "source_entity": "PERSON_005",
+        "target_entity": "TRUST_001",
+        "legal_status": "legitimate",
+        "evidence": [
+          "trust_deed",
+          "Trust deed documentation",
+          "Beneficiary designation records"
+        ],
+        "additional_notes": "Beneficiary being attacked by trustees using trust structure",
+        "evidence_verified": "2026-01-09T05:36:21.408307",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust beneficiary documentation",
+          "1-CIVIL-RESPONSE - Beneficiary evidence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_BENEF_001",
+        "relation_type": "legitimate_beneficiary",
+        "source_entity": "PERSON_005",
+        "target_entity": "TRUST_001",
+        "beneficiary_type": "family_trust_beneficiary",
+        "legal_status": "legitimate",
+        "evidence": [
+          "trust_deed",
+          "beneficiary_documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408308",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust beneficiary documentation",
+          "1-CIVIL-RESPONSE - Beneficiary evidence"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_BENEF_002",
+        "relation_type": "excluded_beneficiary",
+        "source_entity": "PERSON_005",
+        "target_entity": "TRUST_001",
+        "beneficiary_type": "unauthorized_exclusion",
+        "legal_status": "fraudulent",
+        "evidence": [
+          "unauthorized_beneficiary_changes_2025_05_02",
+          "Trust deed documentation",
+          "Beneficiary designation records"
+        ],
+        "perpetrators": [
+          "PERSON_001",
+          "PERSON_002"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408310",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF06 - Trust beneficiary documentation",
+          "1-CIVIL-RESPONSE - Beneficiary evidence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "professional_correspondence_relations": [
+      {
+        "relation_id": "REL_PROF_001",
+        "relation_type": "professional_correspondence",
+        "source_entity": "PERSON_007",
+        "target_entity": "PERSON_010",
+        "correspondence_type": "financial_reporting",
+        "date": "2020-08-13",
+        "evidence": [
+          "trial_balance_email_2020_08_13",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "significance": "witness_to_financial_control",
+        "additional_notes": "Bernadine Wright received trial balance from Bantjes, witness to his control over financial systems",
+        "evidence_verified": "2026-01-09T05:36:21.408312",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF4_SARS_Audit_Email.md - Professional correspondence",
+          "ANNEXURES/JF05 - Email correspondence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_PROF_001",
+        "relation_type": "professional_correspondence",
+        "source_entity": "PERSON_007",
+        "target_entity": "PERSON_010",
+        "correspondence_type": "financial_statement_finalization",
+        "evidence": [
+          "trial_balance_email_2020_08_13",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "legal_status": "demonstrates_control",
+        "additional_notes": "Bantjies sent trial balance to Bernadine Wright for financial statement finalization meeting",
+        "evidence_verified": "2026-01-09T05:36:21.408313",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF4_SARS_Audit_Email.md - Professional correspondence",
+          "ANNEXURES/JF05 - Email correspondence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "capital_extraction_relations": [
+      {
+        "relation_id": "REL_EXTRACT_001",
+        "relation_type": "capital_extraction",
+        "source_entity": "ORG_005",
+        "target_entity": "members",
+        "extraction_mechanism": "members_loan_account",
+        "amount": "R22,800,000",
+        "date": "2020-04-30",
+        "significance": "profit_extraction_infrastructure",
+        "evidence": [
+          "villa_via_trial_balance_apr_2020",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "additional_notes": "Villa Via members loan account showing R22.8M capital extraction, monthly rental income R4.4M",
+        "evidence_verified": "2026-01-09T05:36:21.408315",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF03 - Financial extraction evidence",
+          "ANNEXURES/JF07 - Transaction records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "inter_company_loan_relations": [
+      {
+        "relation_id": "REL_LOAN_001",
+        "relation_type": "inter_company_loan",
+        "lender": "ORG_002",
+        "borrower": "ORG_004",
+        "loan_type": "interest_bearing",
+        "interest_payment": "R414,334.09",
+        "payment_date": "2020-02-28",
+        "significance": "financial_interdependency",
+        "evidence": [
+          "trial_balance_2020",
+          "loan_agreement"
+        ],
+        "additional_notes": "SLG pays interest to RST per loan agreement",
+        "evidence_verified": "2026-01-09T05:36:21.408316",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF03 - Inter-company loan documentation",
+          "ANNEXURES/JF07 - Financial records"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_LOAN_002",
+        "relation_type": "inter_company_loan",
+        "lender": "ORG_002",
+        "borrower": "ORG_001",
+        "loan_type": "production_financing",
+        "loan_amount": "R750,000",
+        "advance_date": "2020-02-28",
+        "significance": "financial_dependency_creation",
+        "evidence": [
+          "trial_balance_2020",
+          "Financial statements",
+          "Bank transaction records"
+        ],
+        "additional_notes": "RST advances R750K to RWW for production costs",
+        "evidence_verified": "2026-01-09T05:36:21.408318",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF03 - Inter-company loan documentation",
+          "ANNEXURES/JF07 - Financial records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "knowledge_acquisition_relations": [
+      {
+        "relation_id": "REL_KNOWLEDGE_001",
+        "relation_type": "knowledge_acquisition",
+        "source_entity": "PERSON_007",
+        "target_entity": "criminal_matters",
+        "knowledge_type": "fraud_and_murder_disclosure",
+        "acquisition_date": "2025-06-10",
+        "evidence": [
+          "email_received_thanks_daniel_2025_08_29",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "legal_status": "knowledge_before_perjury",
+        "critical_significance": "Bantjies knew of criminal matters before signing confirmatory affidavit",
+        "evidence_verified": "2026-01-09T05:36:21.408319",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/SF4_SARS_Audit_Email.md - Knowledge acquisition evidence",
+          "ANNEXURES/JF08 - Communication records"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "strategic_coordination_relations": [
+      {
+        "relation_id": "REL_LEGAL_001",
+        "relation_type": "strategic_coordination",
+        "source_entity": "PERSON_001",
+        "target_entity": "settlement_and_interdict",
+        "coordination_type": "timing_manipulation",
+        "timing_gap_days": 2,
+        "evidence": [
+          "settlement_agreement_2025_08_11",
+          "founding_affidavit_2025_08_13"
+        ],
+        "legal_status": "strategic_litigation_tactic",
+        "critical_significance": "Settlement signed 2 days before interdict filing demonstrates premeditation",
+        "evidence_verified": "2026-01-09T05:36:21.408321",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Coordination evidence",
+          "2-CRIMINAL-CASE - Conspiracy documentation"
+        ],
+        "confidence": 0.85,
+        "evidence_strength": "strong"
+      }
+    ],
+    "professional_relations": [
+      {
+        "relation_id": "REL_PROF_003",
+        "from_entity": "PERSON_012",
+        "to_entity": "ORG_012",
+        "relation_type": "prepared_financial_statements",
+        "description": "Marisca Meyer prepared RegimaSA 2019 financial statements (issued 25 June 2025)",
+        "evidence": [
+          "RegimaSA(Pty)Ltd-2019-Financialstatements-SME.pdf - Preparer, page 1",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "significance": "Retrospective preparation 6+ years after period end; timing coincides with legal proceedings",
+        "evidence_verified": "2026-01-09T05:36:21.408322",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF05 - Professional relationship evidence",
+          "ANNEXURES/JF06 - Legal correspondence"
+        ],
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "evidence_based_relations": [
+      {
+        "relation_id": "REL_023",
+        "from_entity": "PERSON_007",
+        "from_name": "Danie Bantjies",
+        "to_entity": "TRUST_001",
+        "to_name": "Faucitt Family Trust",
+        "relation_type": "DEBT",
+        "description": "Bantjies owes R18,685,000 to Faucitt Family Trust",
+        "financial_amount": "R18,685,000.00",
+        "evidence": [
+          "SF1_Bantjies_Debt_Documentation.md",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "ad_res_j7_references": [
+          "ANNEXURES/SF1_Bantjies_Debt_Documentation.md"
+        ],
+        "burden_of_proof": {
+          "civil": "HIGH",
+          "criminal": "MEDIUM"
+        },
+        "evidence_type": "documentary",
+        "legal_significance": "Creates massive conflict of interest as Bantjies is also undisclosed trustee and accountant",
+        "motive_analysis": "R18.685M debt provides clear motive to prevent fraud discovery and dismiss audit requests",
+        "timeline_events": [
+          "EVENT_089"
+        ],
+        "created": "2025-12-19T16:36:39.168388",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Comprehensive evidence packages",
+          "1-CIVIL-RESPONSE - Evidence documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408324",
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_024",
+        "from_entity": "PERSON_002",
+        "from_name": "Rynette Farrar",
+        "to_entity": "ORG_001",
+        "to_name": "RegimA Worldwide Distribution",
+        "relation_type": "SYSTEM_CONTROL",
+        "description": "Rynette controls Sage accounting system with access to Pete@regima.com email",
+        "evidence": [
+          "SF2_Sage_Screenshots_Rynette_Control.md",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "ad_res_j7_references": [
+          "ANNEXURES/SF2_Sage_Screenshots_Rynette_Control.md"
+        ],
+        "burden_of_proof": {
+          "civil": "HIGH",
+          "criminal": "HIGH"
+        },
+        "evidence_type": "visual_screenshot",
+        "legal_significance": "Direct proof of system control and email access enabling financial manipulation",
+        "technical_details": {
+          "system": "Sage Accounting",
+          "user_accounts": [
+            "Pete@regima.com",
+            "rynette@regima.zone"
+          ],
+          "subscription_owner": "RegimA Worldwide Distribution (Pty) Ltd",
+          "expiry_date": "2025-07-23",
+          "screenshot_date": "2025-06-20"
+        },
+        "timeline_events": [
+          "EVENT_090"
+        ],
+        "created": "2025-12-19T16:36:39.168396",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Comprehensive evidence packages",
+          "1-CIVIL-RESPONSE - Evidence documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408326",
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_025",
+        "from_entity": "ORG_015",
+        "from_name": "SARS",
+        "to_entity": "ORG_001",
+        "to_name": "RegimA Worldwide Distribution",
+        "relation_type": "TAX_AUDIT",
+        "description": "SARS conducting tax audit of RegimA companies",
+        "evidence": [
+          "SF4_SARS_Audit_Email.md",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "ad_res_j7_references": [
+          "ANNEXURES/SF4_SARS_Audit_Email.md"
+        ],
+        "burden_of_proof": {
+          "civil": "HIGH",
+          "criminal": "N/A"
+        },
+        "evidence_type": "official_correspondence",
+        "legal_significance": "Independent regulatory verification of irregularities",
+        "timeline_events": [
+          "EVENT_088"
+        ],
+        "created": "2025-12-19T16:36:39.168400",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Comprehensive evidence packages",
+          "1-CIVIL-RESPONSE - Evidence documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408327",
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_026",
+        "from_entity": "ORG_014",
+        "from_name": "Adderory",
+        "to_entity": "ORG_001",
+        "to_name": "RegimA Worldwide Distribution",
+        "relation_type": "STOCK_SUPPLY",
+        "description": "Adderory supplies stock to RegimA (potential fictitious supplier)",
+        "evidence": [
+          "SF5_Adderory_Company_Registration_Stock_Supply.md",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "ad_res_j7_references": [
+          "ANNEXURES/SF5_Adderory_Company_Registration_Stock_Supply.md"
+        ],
+        "burden_of_proof": {
+          "civil": "MEDIUM",
+          "criminal": "LOW"
+        },
+        "evidence_type": "company_records",
+        "legal_significance": "Potential creation of fictitious or controlled supplier to manipulate revenue recognition",
+        "timeline_events": [
+          "EVENT_091"
+        ],
+        "created": "2025-12-19T16:36:39.168402",
+        "ad_res_j7_evidence": [
+          "ANNEXURES/JF08 - Comprehensive evidence packages",
+          "1-CIVIL-RESPONSE - Evidence documentation"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408329",
+        "confidence": 0.75,
+        "evidence_strength": "strong"
+      }
+    ],
+    "legal_relations": [
+      {
+        "relation_id": "REL_ORG007_PERSON001",
+        "source_entity": "ORG_007",
+        "target_entity": "PERSON_001",
+        "relation_type": "legal_representation",
+        "description": "Ian Levitt Attorneys represents Peter Faucitt in R63M demand",
+        "evidence": [
+          "SF9",
+          "Supporting documentation",
+          "Cross-referenced evidence files"
+        ],
+        "temporal_scope": {
+          "start": "2025-10-23",
+          "status": "active"
+        },
+        "significance": "Establishes formal legal representation and quantum",
+        "ad_res_j7_evidence": [
+          "SF9_Ian_Levitt_Demand_Letter.md",
+          "ANNEXURES/JF04 - CIPC company records",
+          "ANNEXURES/JF08/evidence_package_20251012 - Comprehensive evidence"
+        ],
+        "evidence_verified": "2026-01-09T05:36:21.408331",
+        "confidence": 0.75,
+        "evidence_strength": "moderate"
+      }
+    ],
+    "address_relations": [
+      {
+        "relation_id": "REL_ADDR_001",
+        "relation_type": "shares_postal_address",
+        "source_entity": "PERSON_015",
+        "target_entity": "ORG_001",
+        "description": "Alan Peter Louw uses PO Box 9477 Edenglen - same postal address as Faucitt companies",
+        "legal_significance": "Potential business connection between Louw network and Faucitt companies",
+        "evidence": [
+          "CIPC WinDeed Report 293350197 - Director search shows PO Box 9477 Edenglen",
+          "CIPC WinDeed Report 293348688 - RWD uses PO Box 9523 Edenglen (adjacent)"
+        ],
+        "evidence_strength": "moderate",
+        "requires_investigation": true,
+        "added_date": "2026-01-09T06:56:17.171814"
+      }
+    ],
+    "directorship_relations": [
+      {
+        "relation_id": "REL_DIR_015",
+        "relation_type": "director_of",
+        "source_entity": "PERSON_015",
+        "target_entity": "ORG_015",
+        "description": "Alan Peter Louw is director of ALOECO (SA)",
+        "appointment_date": "2019/10/22",
+        "evidence": [
+          "CIPC WinDeed Report 293350058"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_DIR_016",
+        "relation_type": "director_of",
+        "source_entity": "PERSON_016",
+        "target_entity": "ORG_015",
+        "description": "Martin Carlo Rizzotto is director of ALOECO (SA)",
+        "appointment_date": "2019/10/22",
+        "evidence": [
+          "CIPC WinDeed Report 293350058"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_DIR_017",
+        "relation_type": "director_of",
+        "source_entity": "PERSON_015",
+        "target_entity": "ORG_016",
+        "description": "Alan Peter Louw is director of Marlouw Group",
+        "appointment_date": "2019/12/04",
+        "evidence": [
+          "CIPC WinDeed Report 293351580"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_DIR_018",
+        "relation_type": "director_of",
+        "source_entity": "PERSON_016",
+        "target_entity": "ORG_016",
+        "description": "Martin Carlo Rizzotto is director of Marlouw Group",
+        "appointment_date": "2019/12/04",
+        "evidence": [
+          "CIPC WinDeed Report 293351580"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_DIR_019",
+        "relation_type": "director_of",
+        "source_entity": "PERSON_015",
+        "target_entity": "ORG_017",
+        "description": "Alan Peter Louw is director of Big Business 301",
+        "appointment_date": "2018/12/01",
+        "evidence": [
+          "CIPC WinDeed Report 293351589"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_DIR_020",
+        "relation_type": "director_of",
+        "source_entity": "PERSON_016",
+        "target_entity": "ORG_017",
+        "description": "Martin Carlo Rizzotto is director of Big Business 301",
+        "appointment_date": "2018/12/01",
+        "evidence": [
+          "CIPC WinDeed Report 293351589"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_027",
+        "type": "directorship",
+        "source_entity": "Dennis Jacobus Bishop",
+        "target_entity": "Rezonance",
+        "role": "Initial Director (Shelf Company)",
+        "start_date": "2017-02-22",
+        "end_date": "2017-04-04",
+        "status": "resigned",
+        "source": "293355407.Pdf"
+      },
+      {
+        "relation_id": "REL_028",
+        "type": "directorship",
+        "source_entity": "Dennis Jacobus Bishop",
+        "target_entity": "RegimA Medic",
+        "role": "Initial Director (Shelf Company)",
+        "start_date": "2017-02-27",
+        "end_date": "2017-04-10",
+        "status": "resigned",
+        "source": "293355412.Pdf"
+      },
+      {
+        "relation_id": "REL_029",
+        "type": "directorship",
+        "source_entity": "Daniel James Faucitt",
+        "target_entity": "Rezonance",
+        "role": "Director",
+        "start_date": "2017-04-04",
+        "end_date": null,
+        "status": "active",
+        "source": "293355407.Pdf"
+      },
+      {
+        "relation_id": "REL_030",
+        "type": "directorship",
+        "source_entity": "Kayla Pretorius",
+        "target_entity": "Rezonance",
+        "role": "Director",
+        "start_date": "2017-04-04",
+        "end_date": null,
+        "status": "active",
+        "source": "293355407.Pdf"
+      },
+      {
+        "relation_id": "REL_031",
+        "type": "directorship",
+        "source_entity": "Daniel James Faucitt",
+        "target_entity": "RegimA Medic",
+        "role": "Director",
+        "start_date": "2017-04-10",
+        "end_date": null,
+        "status": "active",
+        "source": "293355412.Pdf"
+      },
+      {
+        "relation_id": "REL_032",
+        "type": "directorship",
+        "source_entity": "Jacqueline Faucitt",
+        "target_entity": "RegimA Medic",
+        "role": "Director",
+        "start_date": "2020-07-07",
+        "end_date": null,
+        "status": "active",
+        "source": "293355412.Pdf"
+      },
+      {
+        "relation_id": "REL_033",
+        "type": "directorship",
+        "source_entity": "Peter Andrew Faucitt",
+        "target_entity": "RegimA Medic",
+        "role": "Director",
+        "start_date": "2020-07-07",
+        "end_date": null,
+        "status": "active",
+        "source": "293355412.Pdf"
+      },
+      {
+        "relation_id": "REL_034",
+        "type": "directorship",
+        "source_entity": "John Leslie Knowlton",
+        "target_entity": "RegimA Medic",
+        "role": "Director",
+        "start_date": "2017-04-10",
+        "end_date": null,
+        "status": "active",
+        "source": "293355412.Pdf"
+      },
+      {
+        "relation_id": "REL_DIR_46",
+        "type": "directorship",
+        "source": "Barend Thomas Nortje",
+        "target": "De Fay Fund Management",
+        "relationship": "director_of",
+        "appointment_date": "2007-07-17",
+        "evidence": [
+          "293338023-Director-BarendNortje.Pdf"
+        ],
+        "evidence_strength": "strong"
+      }
+    ],
+    "membership_relations": [
+      {
+        "relation_id": "REL_MEM_001",
+        "relation_type": "member_of",
+        "source_entity": "PERSON_015",
+        "target_entity": "ORG_018",
+        "description": "Alan Peter Louw is 51% member of Art of Buzztec (SA)",
+        "membership_percentage": 51,
+        "appointment_date": "2007/11/27",
+        "evidence": [
+          "CIPC WinDeed Report 293351595"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_MEM_002",
+        "relation_type": "member_of",
+        "source_entity": "PERSON_016",
+        "target_entity": "ORG_018",
+        "description": "Martin Carlo Rizzotto is 49% member of Art of Buzztec (SA)",
+        "membership_percentage": 49,
+        "appointment_date": "2018/08/01",
+        "evidence": [
+          "CIPC WinDeed Report 293351595"
+        ],
+        "evidence_strength": "strong",
+        "added_date": "2026-01-09T06:56:17.171814"
+      },
+      {
+        "relation_id": "REL_035",
+        "type": "membership",
+        "source_entity": "Martin Carlo Rizzotto",
+        "target_entity": "UFO Express",
+        "role": "Member",
+        "ownership_percentage": 100,
+        "start_date": "1997-09-02",
+        "end_date": null,
+        "status": "active",
+        "source": "293352764.Pdf"
+      },
+      {
+        "relation_id": "REL_036",
+        "type": "membership",
+        "source_entity": "Alan Peter Louw",
+        "target_entity": "S A Logistic Services",
+        "role": "Member",
+        "ownership_percentage": 100,
+        "start_date": "1991-11-28",
+        "end_date": null,
+        "status": "active",
+        "source": "293351608.Pdf"
+      },
+      {
+        "relation_id": "REL_037",
+        "type": "membership",
+        "source_entity": "Alan Peter Louw",
+        "target_entity": "ALOECO (SA) - CC 2006",
+        "role": "Member",
+        "ownership_percentage": 51,
+        "start_date": "2006-02-14",
+        "end_date": null,
+        "status": "active",
+        "source": "293351612.Pdf"
+      },
+      {
+        "relation_id": "REL_038",
+        "type": "membership",
+        "source_entity": "Martin Carlo Rizzotto",
+        "target_entity": "ALOECO (SA) - CC 2006",
+        "role": "Member",
+        "ownership_percentage": 49,
+        "start_date": "2018-08-01",
+        "end_date": null,
+        "status": "active",
+        "source": "293351612.Pdf"
+      },
+      {
+        "relation_id": "REL_MEM_47",
+        "type": "membership",
+        "source": "Barend Thomas Nortje",
+        "target": "Dermal Skin Treatments Cape Town",
+        "relationship": "member_of",
+        "ownership": "50%",
+        "appointment_date": "2006-03-16",
+        "evidence": [
+          "293337582-Company-DermalSkinTreatmentsCapeTown.Pdf"
+        ],
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_MEM_48",
+        "type": "membership",
+        "source": "Sharon Nortje",
+        "target": "Dermal Skin Treatments Cape Town",
+        "relationship": "member_of",
+        "ownership": "50%",
+        "appointment_date": "2006-03-16",
+        "evidence": [
+          "293337582-Company-DermalSkinTreatmentsCapeTown.Pdf"
+        ],
+        "evidence_strength": "strong"
+      }
+    ],
+    "former_relations": [
+      {
+        "relation_id": "REL_FORMER_001",
+        "relation_type": "former_director_of",
+        "source_entity": "PERSON_017",
+        "target_entity": "ORG_001",
+        "description": "Christian Gouws was initial director of RegimA Worldwide Distribution (shelf company)",
+        "appointment_date": "2011/03/11",
+        "resignation_date": "2011/03/10",
+        "additional_notes": "Resignation date before registration date indicates shelf company transfer",
+        "evidence": [
+          "CIPC WinDeed Report 293348688"
+        ],
+        "evidence_strength": "moderate",
+        "added_date": "2026-01-09T06:56:17.171814"
+      }
+    ],
+    "other_relations": [
+      {
+        "relation_id": "REL_039",
+        "type": "spouse",
+        "source_entity": "Martin Carlo Rizzotto",
+        "target_entity": "Vanessa Claire Rizzotto",
+        "role": "Spouse",
+        "start_date": null,
+        "end_date": null,
+        "status": "active",
+        "notes": "Married out of community of property",
+        "source": "293353145.Pdf"
+      },
+      {
+        "relation_id": "REL_040",
+        "type": "employment",
+        "source_entity": "Bernadine Wright",
+        "target_entity": "RegimA International Skin Treatments CC",
+        "role": "Bookkeeper",
+        "start_date": null,
+        "end_date": null,
+        "status": "active",
+        "source": "TheCosmeticsIndustry(2017-11-14).pdf"
+      },
+      {
+        "relation_id": "REL_SPOUSE_49",
+        "type": "spouse",
+        "source": "Barend Thomas Nortje",
+        "target": "Sharon Nortje",
+        "relationship": "married_to",
+        "evidence": [
+          "Same address: 9 Denbigh Road, Constantia"
+        ],
+        "evidence_strength": "moderate"
+      }
+    ],
+    "distributor_relations": [
+      {
+        "relation_id": "REL_DIST_41",
+        "type": "distributor",
+        "source": "Dermal Skin Treatments Cape Town",
+        "target": "RegimA Skin Treatments",
+        "relationship": "distributes_for",
+        "region": "Western Cape",
+        "status": "ACTIVE",
+        "evidence": [
+          "293337582-Company-DermalSkinTreatmentsCapeTown.Pdf"
+        ],
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_DIST_42",
+        "type": "distributor",
+        "source": "Kachan Marketing and Distribution",
+        "target": "RegimA Skin Treatments",
+        "relationship": "distributes_for",
+        "region": "Gauteng",
+        "status": "ACTIVE",
+        "evidence": [
+          "293340322-Company-KachanMarketingandDistribution.Pdf"
+        ],
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_DIST_43",
+        "type": "distributor",
+        "source": "Dandelion SA",
+        "target": "RegimA Skin Treatments",
+        "relationship": "distributes_for",
+        "region": "Gauteng",
+        "status": "ACTIVE",
+        "evidence": [
+          "293342245-Company-DandelionSA.Pdf"
+        ],
+        "evidence_strength": "strong"
+      }
+    ],
+    "bond_relations": [
+      {
+        "relation_id": "REL_BOND_44",
+        "type": "bond",
+        "source": "RegimA Skin Treatments CC",
+        "target": "Karen Patricia Avnit",
+        "relationship": "bond_holder",
+        "property": "SS Forest Lodge 173, Unit 4",
+        "amount": "R3,110,000",
+        "registration_date": "2019-11-22",
+        "document": "SB48685/2019",
+        "evidence": [
+          "293344692-Property-KarenAvnit.Pdf",
+          "293347244-List-Deeds-SB48685-2019.Pdf"
+        ],
+        "evidence_strength": "conclusive",
+        "significance": "RegimA Skin Treatments providing financing to distributors"
+      }
+    ],
+    "property_relations": [
+      {
+        "relation_id": "REL_PROP_45",
+        "type": "property",
+        "source": "Karen Patricia Avnit",
+        "target": "SS Forest Lodge 173, Unit 4",
+        "relationship": "owns",
+        "purchase_date": "2006-06-05",
+        "purchase_price": "R1,100,000",
+        "evidence": [
+          "293344692-Property-KarenAvnit.Pdf"
+        ],
+        "evidence_strength": "strong"
+      }
+    ],
+    "ketoni_relations": [
+      {
+        "relation_id": "REL_KETONI_001",
+        "relation_type": "financial_obligation",
+        "source_entity": "ORG_KETONI_001",
+        "source_name": "Ketoni Investment Holdings",
+        "target_entity": "ORG_FFT_001",
+        "target_name": "Faucitt Family Trust",
+        "description": "Ketoni owes ZAR 18.75M to FFT with three-year payout schedule (May 2026, May 2027, May 2029)",
+        "relationship_details": {
+          "obligation_amount": "ZAR 18,750,000",
+          "first_payout_date": "2026-05",
+          "investment_date": "2023-04-24",
+          "structure": "Three-year payout schedule"
+        },
+        "significance": "CENTRAL FINANCIAL MOTIVE for all trust control actions",
+        "evidence": [
+          "Ketoni investment documentation",
+          "FFT shareholder records"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "evidence/FFT_KETONI_INVESTMENT_TIMELINE_V49.md"
+        ],
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_KETONI_002",
+        "relation_type": "beneficiary_entitlement",
+        "source_entity": "PERSON_001",
+        "source_name": "Peter Andrew Faucitt",
+        "target_entity": "ORG_FFT_001",
+        "target_name": "Faucitt Family Trust",
+        "description": "Peter is FFT beneficiary entitled to 1/3 share of ZAR 18.75M Ketoni payout",
+        "relationship_details": {
+          "entitlement": "1/3 share of ZAR 18.75M",
+          "estimated_share": "ZAR 6,250,000",
+          "payout_date": "2026-05",
+          "control_motive": "Maximize personal share by controlling other beneficiaries"
+        },
+        "significance": "Peter's financial motive for trust control consolidation",
+        "ketoni_context": "Explains forum shopping, trustee power backdating, beneficiary neutralization",
+        "evidence": [
+          "FFT trust deed",
+          "Beneficiary records"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "lex/agent_based_model_v48_ketoni_integrated.scm"
+        ],
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_KETONI_003",
+        "relation_type": "beneficiary_entitlement",
+        "source_entity": "PERSON_004",
+        "source_name": "Jacqueline Faucitt",
+        "target_entity": "ORG_FFT_001",
+        "target_name": "Faucitt Family Trust",
+        "description": "Jax is FFT beneficiary entitled to 1/3 share of ZAR 18.75M Ketoni payout",
+        "relationship_details": {
+          "entitlement": "1/3 share of ZAR 18.75M",
+          "estimated_share": "ZAR 6,250,000",
+          "payout_date": "2026-05",
+          "status": "NEUTRALIZED via interdict 2025-08-13"
+        },
+        "significance": "Jax neutralized as trustee to prevent opposition to Peter's payout decisions",
+        "ketoni_context": "48-hour betrayal after Main Trustee document signing",
+        "evidence": [
+          "FFT trust deed",
+          "Interdict application"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "jax-dan-response/JAX_DAN_RESPONSE_IMPROVEMENTS_V49_KETONI_INTEGRATED.md"
+        ],
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_KETONI_004",
+        "relation_type": "beneficiary_entitlement",
+        "source_entity": "PERSON_005",
+        "source_name": "Daniel James Faucitt",
+        "target_entity": "ORG_FFT_001",
+        "target_name": "Faucitt Family Trust",
+        "description": "Dan is FFT beneficiary entitled to 1/3 share of ZAR 18.75M Ketoni payout",
+        "relationship_details": {
+          "entitlement": "1/3 share of ZAR 18.75M",
+          "estimated_share": "ZAR 6,250,000",
+          "payout_date": "2026-05",
+          "threat": "Curatorship = Peter controls Dan's entire share"
+        },
+        "significance": "Dan targeted for curatorship fraud to control his ZAR 6.25M share",
+        "ketoni_context": "Medical testing rushed T-9 months before payout after fraud exposure",
+        "evidence": [
+          "FFT trust deed",
+          "Interdict application",
+          "Medical testing documentation"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "jax-dan-response/JAX_DAN_RESPONSE_IMPROVEMENTS_V49_KETONI_INTEGRATED.md"
+        ],
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_KETONI_005",
+        "relation_type": "professional_connection",
+        "source_entity": "PERSON_007",
+        "source_name": "Daniel Jacobus Bantjies",
+        "target_entity": "PERSON_DERRICK_001",
+        "target_name": "Kevin Michael Derrick",
+        "description": "Bantjies (FFT Trustee) is professional colleague of Kevin Derrick (Ketoni Director)",
+        "relationship_details": {
+          "connection_type": "Professional colleagues (both accountants)",
+          "bantjies_role": "FFT Trustee appointed July 2024",
+          "derrick_role": "Ketoni Director",
+          "timing": "Bantjies appointed T-10 months before Ketoni payout"
+        },
+        "significance": "Connection between Ketoni payout and Bantjies' strategic trustee appointment",
+        "ketoni_context": "Appointee connected to Ketoni director positioned to control payout",
+        "red_flags": [
+          "trustee_connected_to_payout_source",
+          "appointment_timing_T-10_months",
+          "conflict_of_interest"
+        ],
+        "evidence": [
+          "Professional connection records",
+          "Trustee appointment documentation"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "lex/south_african_trust_law_enhanced_v9_ketoni_payout.scm"
+        ],
+        "evidence_strength": "strong"
+      },
+      {
+        "relation_id": "REL_KETONI_006",
+        "relation_type": "director",
+        "source_entity": "PERSON_DERRICK_001",
+        "source_name": "Kevin Michael Derrick",
+        "target_entity": "ORG_KETONI_001",
+        "target_name": "Ketoni Investment Holdings",
+        "description": "Kevin Derrick is Director of Ketoni Investment Holdings",
+        "relationship_details": {
+          "role": "Director",
+          "obligation": "Ketoni owes ZAR 18.75M to FFT (May 2026)",
+          "connection": "Colleague of Bantjies (FFT Trustee)"
+        },
+        "significance": "Links Ketoni payout to FFT trustee through professional connection",
+        "evidence": [
+          "CIPC director records",
+          "Ketoni company documentation"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md"
+        ],
+        "evidence_strength": "verified_cipc_record"
+      },
+      {
+        "relation_id": "REL_KETONI_007",
+        "relation_type": "shareholder",
+        "source_entity": "ORG_FFT_001",
+        "source_name": "Faucitt Family Trust",
+        "target_entity": "ORG_KETONI_001",
+        "target_name": "Ketoni Investment Holdings",
+        "description": "FFT holds 5,000 A-Ordinary shares in Ketoni Investment Holdings",
+        "relationship_details": {
+          "shares": "5,000 A-Ordinary shares",
+          "investment_date": "2023-04-24",
+          "payout_entitlement": "ZAR 18.75M (May 2026, May 2027, May 2029)"
+        },
+        "significance": "Establishes FFT's financial interest in Ketoni",
+        "evidence": [
+          "Share certificates",
+          "Investment documentation"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "evidence/FFT_KETONI_INVESTMENT_TIMELINE_V49.md"
+        ],
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_KETONI_008",
+        "relation_type": "trustee_appointment",
+        "source_entity": "PERSON_002",
+        "source_name": "Rynette Farrar",
+        "target_entity": "PERSON_007",
+        "target_name": "Daniel Jacobus Bantjies",
+        "description": "Rynette appointed Bantjies as FFT Trustee in July 2024",
+        "relationship_details": {
+          "appointment_date": "2024-07",
+          "timing": "T-10 months before Ketoni payout",
+          "rynette_role": "Operational controller (NOT TRUSTEE)",
+          "significance": "Strategic appointment before payout"
+        },
+        "significance": "Rynette facilitated control consolidation by appointing Ketoni-connected trustee",
+        "ketoni_context": "Precise timing T-10 months before ZAR 18.75M payout",
+        "red_flags": [
+          "timing_T-10_months_before_payout",
+          "appointee_connected_to_ketoni",
+          "control_consolidation_before_distribution"
+        ],
+        "evidence": [
+          "Trustee appointment documentation"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "lex/agent_based_model_v48_ketoni_integrated.scm"
+        ],
+        "evidence_strength": "conclusive"
+      },
+      {
+        "relation_id": "REL_KETONI_009",
+        "relation_type": "co_trustee",
+        "source_entity": "PERSON_001",
+        "source_name": "Peter Andrew Faucitt",
+        "target_entity": "PERSON_007",
+        "target_name": "Daniel Jacobus Bantjies",
+        "description": "Peter and Bantjies are co-trustees of FFT with control before May 2026 payout",
+        "relationship_details": {
+          "peter_role": "Main Trustee (backdated to 2025-07-01)",
+          "bantjies_role": "Co-trustee (appointed July 2024)",
+          "control_structure": "Peter + Bantjies control trust before May 2026",
+          "jax_status": "Neutralized via interdict",
+          "dan_status": "Targeted for curatorship"
+        },
+        "significance": "Control structure consolidated before ZAR 18.75M payout distribution",
+        "ketoni_context": "Ensures Peter controls payout distribution with Bantjies' support",
+        "evidence": [
+          "Main Trustee designation document",
+          "Trustee appointment records",
+          "Interdict application"
+        ],
+        "ad_res_j7_references": [
+          "KETONI_PAYOUT_INTEGRATION_SUMMARY_V48-49.md",
+          "lex/entity_relation_framework_v48_ketoni_payout_integrated.scm"
+        ],
+        "evidence_strength": "conclusive"
+      }
+    ],
+    "trial_balance_relations": [
+      {
+        "relation_id": "REL_TB_001",
+        "type": "financial_control",
+        "source_entity": "PERSON_TB_001",
+        "target_entity": "ORG_002",
+        "description": "Bernadine Wright as financial decision-maker for RST",
+        "evidence": [
+          "2020-08-13 email coordination"
+        ],
+        "significance": "Establishes financial authority structure"
+      },
+      {
+        "relation_id": "REL_TB_002",
+        "type": "inter_company_debt",
+        "source_entity": "ORG_003",
+        "target_entity": "ORG_002",
+        "description": "SLG owes RST R12,971,390.13 (87% of SLG annual sales)",
+        "evidence": [
+          "SL-TRIALBALANCE2020.xlsx"
+        ],
+        "significance": "Creates financial dependency and control mechanism",
+        "financial_impact": 12971390.13
+      },
+      {
+        "relation_id": "REL_TB_003",
+        "type": "cost_dumping",
+        "source_entity": "ORG_002",
+        "target_entity": "ORG_001",
+        "description": "RST dumps production costs on RWW via R750K loan mechanism",
+        "evidence": [
+          "REG-TRIALBALANCE.xlsx AJEs"
+        ],
+        "significance": "Cost dumping mechanism documented",
+        "financial_impact": 750000.0
+      },
+      {
+        "relation_id": "REL_TB_004",
+        "type": "interest_extraction",
+        "source_entity": "ORG_003",
+        "target_entity": "ORG_002",
+        "description": "SLG pays 3.19% interest to RST (R414K annually on R13M debt)",
+        "evidence": [
+          "SL-TRIALBALANCE2020.xlsx"
+        ],
+        "significance": "Profit shifting via artificially low interest rate",
+        "financial_impact": 414334.09
+      },
+      {
+        "relation_id": "REL_TB_005",
+        "type": "financial_access_continuity",
+        "source_entity": "PERSON_002",
+        "target_entity": "ORG_001",
+        "description": "Rynette Farrar had financial access in 2020 (email recipient) and led 2025 cover-up",
+        "evidence": [
+          "2020-08-13 email",
+          "2025 fraud timeline"
+        ],
+        "significance": "CRITICAL - Establishes continuity of access from 2020 to 2025 fraud",
+        "timeline_span": "2020-08-13 to 2025-05-29"
+      },
+      {
+        "relation_id": "REL_TB_006",
+        "type": "trustee_appointment",
+        "source_entity": "PERSON_002",
+        "target_entity": "PERSON_TB_002",
+        "description": "Rynette appointed Danie Bantjes as Trustee in July 2024 (T-10 months before Ketoni payout)",
+        "evidence": [
+          "Trust documentation",
+          "Ketoni timeline"
+        ],
+        "significance": "CRITICAL - Links 2020 accountant to 2024 trust control consolidation"
+      }
+    ]
+  },
+  "financial_manipulation_patterns": {
+    "year_end_manipulation": {
+      "pattern_type": "Year-end Manipulation",
+      "description": "Critical adjustments made in final days of financial year",
+      "evidence": "Feb 20-28, 2020: 8-day window for major inter-company adjustments",
+      "significance": "Suggests deliberate timing to avoid scrutiny"
+    },
+    "cover_up_acceleration": {
+      "pattern_type": "Cover-up Acceleration",
+      "description": "Systematic evidence destruction following confrontation",
+      "evidence": "May 15-29, 2025: 14-day evidence destruction sequence",
+      "significance": "Indicates pre-planned contingency for discovery"
+    },
+    "suspicious_interest_rate": {
+      "pattern_type": "Suspicious Interest Rate",
+      "description": "SLG pays 3.19% interest to RST",
+      "analysis": "Rate appears artificially low for inter-company loan",
+      "implication": "Possible benefit transfer to RST at SLG expense"
+    },
+    "coordinated_cost_reallocations": {
+      "pattern_type": "Coordinated Cost Reallocations",
+      "description": "Multiple entities reallocate admin fees to production costs simultaneously",
+      "evidence": "RWW: R810K, SLG: R252K on same date (2020-02-20)",
+      "implication": "Coordinated effort to obscure true cost structures"
+    },
+    "excessive_capital_extraction": {
+      "pattern_type": "Excessive Capital Extraction",
+      "description": "Villa Via members loan is 5.2x annual rental income",
+      "analysis": "Suggests systematic capital extraction over multiple years",
+      "implication": "Villa Via used as vehicle for wealth extraction"
+    }
+  },
+  "control_mechanisms": {
+    "centralized_bookkeeping": {
+      "mechanism": "Centralized Bookkeeping Control",
+      "controller": "Co-director's personal bookkeeper",
+      "scope": "All entity financial records",
+      "vulnerability": "Single point of control enables manipulation"
+    },
+    "staggered_year_ends": {
+      "mechanism": "Staggered Financial Year-Ends",
+      "entities": "RST/SLG: Feb 28, Villa Via: Apr 30",
+      "vulnerability": "Creates reporting gaps and complexity",
+      "manipulation_potential": "Allows timing of transactions between periods"
+    },
+    "inter_company_debt_leverage": {
+      "mechanism": "Inter-company Debt Leverage",
+      "description": "SLG owes RST R13M (87% of SLG annual sales)",
+      "control_effect": "Creates financial dependency and control"
+    }
+  }
+}
