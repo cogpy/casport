@@ -31,12 +31,12 @@ interface DashboardLayoutProps {
 }
 
 const navItems = [
-  { path: "/", label: "Dashboard", icon: LayoutDashboard },
-  { path: "/evidence", label: "Evidence Index", icon: Search },
-  { path: "/timeline", label: "Timeline", icon: Clock },
-  { path: "/entities", label: "Entities", icon: Users },
-  { path: "/filings", label: "Legal Filings", icon: FileText },
-  { path: "/summary", label: "Case Summary", icon: BookOpen },
+  { path: "/", label: "Overview", icon: LayoutDashboard },
+  { path: "/applications", label: "Applications", icon: FileText },
+  { path: "/matters", label: "Matter Views", icon: BookOpen },
+  { path: "/timeline", label: "Model & Timeline", icon: Clock },
+  { path: "/filings", label: "v31 Filings", icon: Users },
+  { path: "/combined", label: "Combined View", icon: Search },
 ];
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
@@ -60,7 +60,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="flex items-center gap-2">
                 <Shield className="h-6 w-6 text-primary" />
                 <span className="font-mono font-semibold text-sm text-sidebar-foreground">
-                  CASE 2025-137857
+                  CASELEX · 3 MATTERS
                 </span>
               </div>
             )}
@@ -117,10 +117,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="mb-4 p-3 rounded-md bg-sidebar-accent/50 border border-amber-500/20">
                 <div className="flex items-center gap-2 text-amber-500">
                   <AlertTriangle className="h-4 w-4" />
-                  <span className="text-xs font-mono font-semibold">ACTIVE INVESTIGATION</span>
+                  <span className="text-xs font-mono font-semibold">SYNCHRONIZED WORKING RECORD</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Last updated: 2026-01-18
+                  Last updated: 2026-08-11
                 </p>
               </div>
             )}
@@ -163,15 +163,15 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <header className="sticky top-0 z-30 h-16 bg-background/80 backdrop-blur-sm border-b border-border flex items-center justify-between px-6">
           <div className="flex items-center gap-4">
             <h1 className="font-mono text-lg font-semibold text-foreground">
-              Evidence Portal
+              Synchronized Evidence Portal
             </h1>
             <span className="px-2 py-1 rounded text-xs font-mono bg-primary/10 text-primary border border-primary/20">
-              v2.0
+              v3.1
             </span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-xs font-mono text-muted-foreground">
-              RegimA Group Financial Fraud
+              Working evidence · no adjudicated findings
             </span>
           </div>
         </header>

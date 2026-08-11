@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "generated_on": "2026-08-11",
+  "sync_tag": "caselex-canonical-2026-08-11",
+  "canonical_model": {
+    "entities": 78,
+    "events": 181,
+    "relations": 42,
+    "dated_timeline_entries": 269,
+    "timeline_crosswalk": {
+      "represented": 158,
+      "analysis_artifacts_excluded": 11,
+      "undated_source_gaps": 12
+    },
+    "validation": "56/56 passed"
+  },
+  "filing_portfolio": {
+    "version": "v31",
+    "working_drafts": 9,
+    "validation": "139/139 passed",
+    "professional_review_required": true
+  },
+  "application_bundles": [
+    "court_and_civil_response",
+    "regulatory_and_professional_complaints",
+    "criminal_and_financial_referrals"
+  ],
+  "matter_views": [
+    "2025-137857",
+    "2026-034662",
+    "2026-115880"
+  ],
+  "repositories": {
+    "canonical_portal": "https://cogpy.github.io/revstream1/",
+    "extended_evidence": "https://cogpy.github.io/ad-res-j7/",
+    "combined_view": "https://cogpy.github.io/revstream1/combined/"
+  },
+  "publication_controls": {
+    "not_a_legal_finding": true,
+    "raw_ocr_text_published": false,
+    "full_identity_numbers_published": false,
+    "bank_account_numbers_published": false,
+    "private_email_addresses_published": false,
+    "signatures_published": false
+  }
+}
