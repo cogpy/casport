@@ -1,24 +1,34 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "generated_on": "2026-08-11",
-  "sync_tag": "caselex-canonical-2026-08-11",
+  "sync_tag": "caselex-canonical-2026-08-11-perspectival",
   "canonical_model": {
     "entities": 78,
-    "events": 181,
+    "events": 182,
     "relations": 42,
-    "dated_timeline_entries": 269,
+    "dated_timeline_entries": 270,
     "timeline_crosswalk": {
-      "represented": 158,
+      "represented": 159,
       "analysis_artifacts_excluded": 11,
       "undated_source_gaps": 12
     },
-    "validation": "56/56 passed"
+    "perspectival_evidence": {
+      "events_classified": 182,
+      "court_derived": 16,
+      "annexure_separation_required": 19,
+      "court_pleadings_are_side_versions": true,
+      "court_records_prove_underlying_events": false,
+      "orders_limited_to_operational_terms_and_express_findings": true
+    },
+    "validation": "74/74 passed"
   },
   "filing_portfolio": {
     "version": "v31",
     "working_drafts": 9,
     "validation": "139/139 passed",
-    "professional_review_required": true
+    "professional_review_required": true,
+    "side_attribution_required": true,
+    "independent_source_verification_required": true
   },
   "application_bundles": [
     "court_and_civil_response",
@@ -33,10 +43,14 @@
   "repositories": {
     "canonical_portal": "https://cogpy.github.io/revstream1/",
     "extended_evidence": "https://cogpy.github.io/ad-res-j7/",
-    "combined_view": "https://cogpy.github.io/revstream1/combined/"
+    "combined_view": "https://cogpy.github.io/revstream1/combined/",
+    "perspectival_evidence_policy": "https://cogpy.github.io/revstream1/model/PERSPECTIVAL_EVIDENCE_POLICY.html",
+    "perspectival_evidence_report": "https://cogpy.github.io/revstream1/model/PERSPECTIVAL_EVIDENCE_REPORT.html"
   },
   "publication_controls": {
     "not_a_legal_finding": true,
+    "court_pleadings_classified_by_side": true,
+    "independent_annexures_classified_separately": true,
     "raw_ocr_text_published": false,
     "full_identity_numbers_published": false,
     "bank_account_numbers_published": false,

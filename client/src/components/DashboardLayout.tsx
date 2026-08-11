@@ -117,7 +117,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="mb-4 p-3 rounded-md bg-sidebar-accent/50 border border-amber-500/20">
                 <div className="flex items-center gap-2 text-amber-500">
                   <AlertTriangle className="h-4 w-4" />
-                  <span className="text-xs font-mono font-semibold">SYNCHRONIZED WORKING RECORD</span>
+                  <span className="text-xs font-mono font-semibold">SYNCHRONIZED VERSIONED RECORD</span>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
                   Last updated: 2026-08-11
@@ -171,7 +171,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-xs font-mono text-muted-foreground">
-              Working evidence · no adjudicated findings
+              Party versions mapped · no underlying-event findings
             </span>
           </div>
         </header>

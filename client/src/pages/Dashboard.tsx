@@ -23,16 +23,16 @@ const extendedBase = "https://cogpy.github.io/ad-res-j7";
 
 const stats = [
   { label: "Canonical entities", value: "78", icon: Users },
-  { label: "Canonical events", value: "181", icon: Clock },
+  { label: "Canonical events", value: "182", icon: Clock },
   { label: "Canonical relations", value: "42", icon: Network },
-  { label: "Dated chronology entries", value: "269", icon: GitBranch },
+  { label: "Dated chronology entries", value: "270", icon: GitBranch },
 ];
 
 const applications = [
   {
     title: "Court and civil response",
     description:
-      "Civil reconsideration and document-examiner working drafts, controlled by the official court files and identified primary-source gaps.",
+      "Civil reconsideration and document-examiner working drafts: court files establish procedure and express determinations, while pleadings remain side-specific versions.",
     drafts: "2 working drafts",
     href: `${canonicalBase}/applications/court-civil/`,
     icon: Scale,
@@ -59,19 +59,19 @@ const matters = [
   {
     id: "2025-137857",
     status: "Primary repository case reference",
-    control: "The official court file controls the procedural record.",
+    control: "The official file controls procedure and express determinations; pleadings remain applicant/respondent versions.",
     href: `${canonicalBase}/matters/2025-137857/`,
   },
   {
     id: "2026-034662",
     status: "Divorce-record matter",
-    control: "Filed notices and current procedural status require official confirmation.",
+    control: "Filed notices can establish procedural status, not the truth of underlying divorce allegations.",
     href: `${canonicalBase}/matters/2026-034662/`,
   },
   {
     id: "2026-115880",
     status: "Urgent/reconsideration matter reference",
-    control: "The operative number, filed papers, orders, and outcomes require court-file confirmation.",
+    control: "Court-file confirmation can resolve matter numbers, procedure, orders, and express findings—not disputed underlying events.",
     href: `${canonicalBase}/matters/2026-115880/`,
   },
 ];
@@ -83,10 +83,12 @@ const corrections = [
   "Rynette Farrar is not recorded as a ReZonance director; authority requires a primary instrument.",
   "Mazars material is described as an ISRS 4400 agreed-upon-procedures engagement pending the primary engagement records.",
   "EVENT_187 records transfers only; mandate, invoice, allocation, authority, purpose, and conflict implications remain unresolved.",
+  "EVENT_188 records the KF0019 Part B filing and applicant version; it is not independent proof of the disputed underlying events.",
+  "Court pleadings are applicant/respondent or plaintiff/defendant versions; orders establish only operative terms and express findings within scope.",
 ];
 
 const sourceGaps = [
-  "Complete court registers, filed papers, orders, service records, and matter-number confirmation",
+  "Complete court registers, filed papers, orders, service records, and matter-number confirmation for procedure and express determinations; side attribution for every pleading",
   "Signed Ketoni agreement, amendments, elections, statements, and payment records",
   "Trust deed, amendments, Letters of Authority, resolutions, and Master records",
   "Mazars engagement letter, agreed procedures, mandate, final report, limitations, and responses",
@@ -148,9 +150,10 @@ export default function Dashboard() {
         <div className="mt-6 flex items-start gap-3 rounded-lg border border-amber-500/25 bg-amber-500/5 p-4 text-sm leading-6 text-muted-foreground">
           <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
           <p>
-            This portal organizes records, allegations, source gaps, and draft submissions. It does
-            not determine civil liability, professional misconduct, statutory contravention, or
-            criminal guilt. Primary-source verification and competent professional review remain required.
+            This portal separates independent source records, procedural records, court determinations,
+            and applicant/respondent or plaintiff/defendant versions. Court filings do not independently
+            prove disputed underlying events. Independent-source verification, side attribution, annexure
+            separation, and competent professional review remain required.
           </p>
         </div>
       </section>
@@ -175,11 +178,11 @@ export default function Dashboard() {
             </Card>
           ))}
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           <Card className="evidence-card">
             <CardContent className="p-5">
               <p className="text-sm text-muted-foreground">Model validation</p>
-              <p className="mt-1 font-mono text-2xl font-bold text-emerald-500">56 / 56</p>
+              <p className="mt-1 font-mono text-2xl font-bold text-emerald-500">74 / 74</p>
               <p className="mt-2 text-sm text-muted-foreground">Integrity, privacy, crosswalk, and repository identity checks passed.</p>
             </CardContent>
           </Card>
@@ -193,8 +196,15 @@ export default function Dashboard() {
           <Card className="evidence-card">
             <CardContent className="p-5">
               <p className="text-sm text-muted-foreground">Timeline crosswalk</p>
-              <p className="mt-1 font-mono text-lg font-bold text-foreground">158 represented</p>
+              <p className="mt-1 font-mono text-lg font-bold text-foreground">159 represented</p>
               <p className="mt-2 text-sm text-muted-foreground">11 analysis artifacts excluded; 12 undated records remain source-gapped.</p>
+            </CardContent>
+          </Card>
+          <Card className="evidence-card">
+            <CardContent className="p-5">
+              <p className="text-sm text-muted-foreground">Perspectival evidence map</p>
+              <p className="mt-1 font-mono text-lg font-bold text-foreground">182 / 182 classified</p>
+              <p className="mt-2 text-sm text-muted-foreground">16 court-derived records; 19 events require annexure separation.</p>
             </CardContent>
           </Card>
         </div>
@@ -229,7 +239,7 @@ export default function Dashboard() {
       <section id="matters" className="space-y-4">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Three matter folders</p>
-          <h2 className="mt-1 text-2xl font-semibold text-foreground">Matter-specific navigation and court-file controls</h2>
+          <h2 className="mt-1 text-2xl font-semibold text-foreground">Matter-specific navigation and perspective controls</h2>
         </div>
         <div className="overflow-hidden rounded-xl border border-border bg-card">
           {matters.map((matter, index) => (
@@ -273,7 +283,7 @@ export default function Dashboard() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
               <Database className="h-5 w-5 text-primary" />
-              Primary-source priority register
+              Source and version priority register
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -295,8 +305,9 @@ export default function Dashboard() {
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">v31 portfolio</p>
             <h2 className="mt-1 text-2xl font-semibold text-foreground">Nine controlled working drafts</h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-              All drafts remove synthetic proof percentages, distinguish allegation from determination,
-              record unresolved primary-source gaps, and require professional review before use.
+              All drafts remove synthetic proof percentages, classify court pleadings by side, distinguish
+              procedural facts from disputed underlying events, record unresolved source-and-version gaps,
+              and require professional review before use.
             </p>
           </div>
           <ExternalButton href={`${canonicalBase}/filings/v31/`}>Open full portfolio</ExternalButton>
@@ -326,6 +337,7 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
+            <ExternalButton href={`${canonicalBase}/model/PERSPECTIVAL_EVIDENCE_POLICY.html`}>Perspective policy</ExternalButton>
             <ExternalButton href={`${canonicalBase}/model/CANONICAL_MODEL_VALIDATION.html`}>Model validation</ExternalButton>
             <ExternalButton href="https://github.com/cogpy/revstream1">Source repository</ExternalButton>
           </div>
